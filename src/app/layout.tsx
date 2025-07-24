@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/navigation/Navigation';
+import { LinkModel } from '@/models/navigation/types';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -23,10 +24,20 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const LINKS1: LinkModel = [
+        { name: 'Home', url: '/' },
+        { name: 'About', url: '/about' },
+        { name: 'Sajt', url: '/sajt' },
+    ];
+    const LINKS2: LinkModel = [
+        { name: 'asd', url: '/' },
+        { name: 'dsa', url: '/about' },
+        { name: 'aaaaa', url: '/sajt' },
+    ];
     return (
         <html lang='en'>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <Navigation />
+                <Navigation links={LINKS1} />
                 {children}
             </body>
         </html>
