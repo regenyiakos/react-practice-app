@@ -1,0 +1,16 @@
+.kutya-main {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kutya-content {
+    text-align: center;
+}
+
+.kutya-main h1 {
+    color: red;
+}
+.header-text {
+    font-style: italic;
+}
