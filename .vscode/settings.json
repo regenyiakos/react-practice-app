@@ -1,0 +1,20 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.columnSelection": false,
+    // "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "terminal.integrated.autoReplies": {
+        "Terminate batch job (Y/N)?": "Y\r"
+    },
+    "workbench.startupEditor": "none",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4
+}
