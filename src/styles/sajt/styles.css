@@ -30,4 +30,12 @@
 .cheese-table tr:hover:not(.cheese-header) {
     background-color: #1d1c7c;
     color: white;
+
+    .chrome-icon {
+        fill: white;
+    }
+}
+
+.cheese-table .actions {
+    text-align: center;
 }

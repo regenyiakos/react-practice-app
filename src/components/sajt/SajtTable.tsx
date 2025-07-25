@@ -1,5 +1,7 @@
 import { CheeseTableModel } from '@/models/sajt/types';
 
+import ChromeIcon from '../icons/ChromeIcon';
+
 type CheeseTableProps = {
     cheeseData: CheeseTableModel[];
 };
@@ -13,6 +15,7 @@ export const SajtTable = ({ cheeseData }: CheeseTableProps) => {
                     <th>Country of Origin</th>
                     <th>Texture</th>
                     <th>Description</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +26,18 @@ export const SajtTable = ({ cheeseData }: CheeseTableProps) => {
                         <td>{cheese.countryOfOrigin}</td>
                         <td>{cheese.texture}</td>
                         <td>{cheese.description}</td>
+                        <td className='actions'>
+                            <a
+                                href={`https://www.google.com/search?q=${cheese.cheeseName}`}
+                                target='_blank'
+                            >
+                                <ChromeIcon
+                                    className='chrome-icon'
+                                    width={20}
+                                    height={20}
+                                />
+                            </a>
+                        </td>
                     </tr>
                 ))}
             </tbody>
