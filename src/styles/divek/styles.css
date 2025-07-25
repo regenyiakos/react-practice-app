@@ -1,0 +1,22 @@
+.divek-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.divek-content {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    background-color: #b1b1b1;
+    padding: 20px;
+}
+
+.divek-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border: 5px solid blue;
+    padding: 10px;
+}

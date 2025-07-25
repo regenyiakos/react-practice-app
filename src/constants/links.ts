@@ -5,6 +5,7 @@ export const LINKS1: LinkModel = [
     { name: 'About', url: '/about' },
     { name: 'Sajt', url: '/sajt' },
     { name: 'Kutya', url: '/kutya' },
+    { name: 'Divek', url: '/divek' },
 ];
 const LINKS2: LinkModel = [
     { name: 'asd', url: '/' },
