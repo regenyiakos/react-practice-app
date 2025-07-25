@@ -22,8 +22,24 @@ export const SajtTable = ({ cheeseData }: CheeseTableProps) => {
                 {cheeseData.map((cheese, index) => (
                     <tr key={index} className='cheese-row'>
                         <td>{cheese.cheeseName}</td>
-                        <td>{cheese.type}</td>
-                        <td>{cheese.countryOfOrigin}</td>
+                        <td>
+                            <a
+                                href={`https://www.google.com/search?q=${cheese.type}`}
+                                target='blank'
+                            >
+                                <u>
+                                    <i>{cheese.type}</i>
+                                </u>
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href={`https://www.google.com/search?q=${cheese.countryOfOrigin}`}
+                                target='_blank'
+                            >
+                                <strong>{cheese.countryOfOrigin}</strong>
+                            </a>
+                        </td>
                         <td>{cheese.texture}</td>
                         <td>{cheese.description}</td>
                         <td className='actions'>

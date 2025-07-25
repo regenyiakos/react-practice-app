@@ -45,7 +45,9 @@ export const SajtClient = () => {
         <div className='container'>
             <div className='header'>
                 <h1 className='title'>Welcome to Our Site</h1>
-                <p>This is the page Sajt</p>
+                <p>
+                    This <span className='sajtspan'>is</span> the page Sajt
+                </p>
             </div>
             <div>
                 <SajtTable cheeseData={cheeseData} />
