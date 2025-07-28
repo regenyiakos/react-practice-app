@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './page.module.css';
-import '../styles/navigation/styles.css';
 
 export const Home = () => {
     return (

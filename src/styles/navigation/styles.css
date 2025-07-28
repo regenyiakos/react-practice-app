@@ -1,18 +1,27 @@
-.main-link {
-    color: red;
+.dropDownMenuLink {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
-.blue-text {
+
+.menuLinkText {
+    color: #444444;
+}
+
+.menuLinkText:hover {
     color: blue;
 }
 
-#link1 {
-    color: green;
+.dropDownMenuContainer {
+    position: relative;
 }
 
-/* a {
-    background-color: yellow;
+.dropDownSubMenuContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    padding: 5px;
+    padding-top: 15px;
+    gap: 5px;
 }
-
-a:hover {
-    background-color: orange;
-} */
