@@ -1,0 +1,19 @@
+.div2-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.div2-content {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    padding: 20px;
+}
+.div2-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: beige;
+}
