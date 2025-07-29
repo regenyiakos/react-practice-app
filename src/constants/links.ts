@@ -8,14 +8,37 @@ export const LINKS1: LinkModel = [
     {
         name: 'Kutya',
         url: '/kutya',
-        subLinks: [{ name: 'Kutya 1', url: '/kutya' }],
+        subLinks: [
+            {
+                name: 'Kutya 1',
+                url: '/kutya',
+                subLinks: [
+                    { name: 'Kutya 1.1', url: '/kutya1' },
+                    { name: 'Kutya 1.2', url: '/kutya2' },
+                ],
+            },
+        ],
     },
     {
         name: 'Divek',
         url: '',
         subLinks: [
-            { name: 'Divek 1', url: '/divek' },
-            { name: 'Divek 2', url: '/divek2' },
+            {
+                name: 'Divek 1',
+                url: '/divek',
+                subLinks: [
+                    { name: 'Kutya 1.1', url: '/kutya1' },
+                    { name: 'Kutya 1.2', url: '/kutya2' },
+                ],
+            },
+            {
+                name: 'Divek 2',
+                url: '/divek2',
+                subLinks: [
+                    { name: 'Kutya 1.1', url: '/kutya1' },
+                    { name: 'Kutya 1.2', url: '/kutya2' },
+                ],
+            },
         ],
     },
 ];

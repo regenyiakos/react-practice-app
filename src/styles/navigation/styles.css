@@ -12,11 +12,13 @@
     color: blue;
 }
 
-.dropDownMenuContainer {
+.dropDownMenuContainer,
+.dropDownSubMenuContainer {
     position: relative;
 }
 
-.dropDownSubMenuContainer {
+.dropDownSubMenuContainer,
+.dropDownSubSubMenuLinkContainer {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -24,4 +26,7 @@
     padding: 5px;
     padding-top: 15px;
     gap: 5px;
+}
+.dropDownSubSubMenuLinkContainer {
+    right: -100%;
 }

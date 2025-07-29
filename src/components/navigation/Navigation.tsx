@@ -1,6 +1,11 @@
 'use client';
 import { LinkModel } from '@/models/navigation/types';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import {
+    ChevronDown,
+    ChevronLeft,
+    ChevronRight,
+    ChevronUp,
+} from 'lucide-react';
 import '../../styles/navigation/styles.css';
 import { useState } from 'react';
 
@@ -13,13 +18,26 @@ export const Navigation = ({ links }: NavigationProps) => {
         null
     );
 
+    const [openSubSubMenuIndex, setOpenSubSubMenuIndex] = useState<
+        number | null
+    >(null);
+
     const setCurrentDropDown = (index: number) => {
+        setOpenSubSubMenuIndex(null);
         if (openSubMenuIndex === index) {
             setOpenSubMenuIndex(null);
         } else {
             setOpenSubMenuIndex(index);
         }
     };
+    const setCurrentSubSubDropDown = (index: number) => {
+        if (openSubSubMenuIndex === index) {
+            setOpenSubSubMenuIndex(null);
+        } else {
+            setOpenSubSubMenuIndex(index);
+        }
+    };
+
     return (
         <nav className='w-full flex bg-[lightblue]'>
             <div className='h-max flex p-2 justify-start items-center gap-5 '>
@@ -47,15 +65,68 @@ export const Navigation = ({ links }: NavigationProps) => {
                                     {openSubMenuIndex === index && (
                                         <div className='dropDownSubMenuContainer'>
                                             {link.subLinks?.map(
-                                                (subLink, sIndex) => (
-                                                    <a
-                                                        key={sIndex}
-                                                        href={subLink.url}
-                                                        className='menuLinkText'
-                                                    >
-                                                        {subLink.name}
-                                                    </a>
-                                                )
+                                                (subLink, sIndex) =>
+                                                    (subLink.subLinks?.length ||
+                                                        0) > 0 ? (
+                                                        <div
+                                                            className='dropDownSubSubMenuContainer'
+                                                            key={sIndex}
+                                                        >
+                                                            <div
+                                                                className='dropDownSubSubMenuLink menuLinkText'
+                                                                onClick={() => {
+                                                                    setCurrentSubSubDropDown(
+                                                                        sIndex
+                                                                    );
+                                                                }}
+                                                            >
+                                                                <span>
+                                                                    {
+                                                                        subLink.name
+                                                                    }
+                                                                </span>
+                                                                {openSubSubMenuIndex ===
+                                                                sIndex ? (
+                                                                    <ChevronLeft />
+                                                                ) : (
+                                                                    <ChevronRight />
+                                                                )}
+                                                                {openSubSubMenuIndex ===
+                                                                    sIndex && (
+                                                                    <div className='dropDownSubSubMenuLinkContainer'>
+                                                                        {subLink.subLinks?.map(
+                                                                            (
+                                                                                subsublink,
+                                                                                ssIndex
+                                                                            ) => (
+                                                                                <a
+                                                                                    key={
+                                                                                        ssIndex
+                                                                                    }
+                                                                                    href={
+                                                                                        subsublink.url
+                                                                                    }
+                                                                                    className='menuLinkText'
+                                                                                >
+                                                                                    {
+                                                                                        subsublink.name
+                                                                                    }
+                                                                                </a>
+                                                                            )
+                                                                        )}
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <a
+                                                            key={sIndex}
+                                                            href={subLink.url}
+                                                            className='menuLinkText'
+                                                        >
+                                                            {subLink.name}
+                                                        </a>
+                                                    )
                                             )}
                                         </div>
                                     )}
