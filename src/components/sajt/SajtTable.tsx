@@ -25,7 +25,7 @@ export const SajtTable = ({ cheeseData }: CheeseTableProps) => {
                         <td>
                             <a
                                 href={`https://www.google.com/search?q=${cheese.type}`}
-                                target='blank'
+                                target='_blank'
                             >
                                 <u>
                                     <i>{cheese.type}</i>

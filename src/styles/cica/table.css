@@ -1,0 +1,13 @@
+.cica-table {
+    margin-top: 2rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+.cica-table th,
+.cica-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+.cica-table thead tr {
+    background: #f2f2f2;
+}
