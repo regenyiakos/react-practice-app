@@ -1,6 +1,7 @@
 import SajtClient from '@/components/sajt/SajtClient';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
     title: 'Sajt oldal',
     description: 'Learn more about our awesome project',
 };
