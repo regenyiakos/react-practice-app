@@ -5,9 +5,9 @@
 }
 .cica-table th,
 .cica-table td {
-    border: 1px solid #ccc;
+    border: 1px solid var(--table-cella-szin);
     padding: 8px;
 }
 .cica-table thead tr {
-    background: #f2f2f2;
+    background: var(--table-bg);
 }

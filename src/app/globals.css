@@ -7,6 +7,8 @@
 :root {
     --background: #ffffff;
     --foreground: #171717;
+    --table-bg: lightgreen;
+    --table-cella-szin: #7c4646;
 }
 
 @media (prefers-color-scheme: dark) {
