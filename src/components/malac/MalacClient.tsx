@@ -3,10 +3,18 @@
 import { MenuItem, TextField } from '@mui/material';
 import { MALACOK } from './malacok';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 export const MalacClient = () => {
-    const [filterLocation, setFilterLocation] = useState<string>('');
-    const [filterColor, setFilterColor] = useState<string>('');
+    const searchParams = useSearchParams();
+    const locationParam = searchParams.get('location');
+    const colorParam = searchParams.get('color');
+    const [filterLocation, setFilterLocation] = useState<string>(
+        locationParam ? locationParam : ''
+    );
+    const [filterColor, setFilterColor] = useState<string>(
+        colorParam ? colorParam : ''
+    );
     const locations = () => {
         let uniqueLocations: string[] = [];
         MALACOK.forEach((malac) => {
