@@ -1,8 +1,14 @@
+'use client';
 import { CheeseTableModel } from '@/models/sajt/types';
 import '../../styles/sajt/styles.css';
 import SajtTable from './SajtTable';
+import { useParams } from 'next/dist/client/components/navigation';
+import { useState } from 'react';
 
 export const SajtClient = () => {
+    const params = useParams();
+    const textureParam = params.texture ? params.texture[0] : null;
+
     const cheeseData: CheeseTableModel[] = [
         {
             cheeseName: 'Cheddar',
@@ -41,6 +47,18 @@ export const SajtClient = () => {
             description: 'Rich, savory, and granular, ideal for grating.',
         },
     ];
+
+    const filterCheese = () => {
+        if (textureParam) {
+            return cheeseData.filter(
+                (cheese) =>
+                    cheese.texture.toLocaleLowerCase() ===
+                    textureParam.toLocaleLowerCase()
+            );
+        } else {
+            return cheeseData;
+        }
+    };
     return (
         <div className='container'>
             <div className='header'>
@@ -49,8 +67,14 @@ export const SajtClient = () => {
                     This <span className='sajtspan'>is</span> the page Sajt
                 </p>
             </div>
+            {textureParam && (
+                <div>
+                    <a href='/sajt'>Összes mutatása</a>
+                </div>
+            )}
+
             <div>
-                <SajtTable cheeseData={cheeseData} />
+                <SajtTable cheeseData={filterCheese()} />
             </div>
         </div>
     );
