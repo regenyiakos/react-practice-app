@@ -42,6 +42,7 @@ export const LINKS1: LinkModel = [
             },
         ],
     },
+    { name: 'Forms', url: '/forms' },
 ];
 
 const LINKS2: LinkModel = [
